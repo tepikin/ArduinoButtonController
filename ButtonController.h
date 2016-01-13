@@ -19,7 +19,7 @@ struct Button {
 class ButtonController
 {
  public: 
- static void processing(Button button,unsigned char pin,CallbackFunction clickFunc,CallbackFunction doubleClickFunc,CallbackFunction longPressStartFunc,CallbackFunction longPressStopFunc,CallbackFunction duringLongPressFunc);
+ static void processing(struct Button *button,unsigned char pin,CallbackFunction clickFunc,CallbackFunction doubleClickFunc,CallbackFunction longPressStartFunc,CallbackFunction longPressStopFunc,CallbackFunction duringLongPressFunc);
  
  private:
  static const unsigned int buttonClickTicks = 500; // number of ticks that have to pass by before a click is detected
