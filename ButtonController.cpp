@@ -27,7 +27,7 @@ void ButtonController::processing(struct Button *button,unsigned char pin,Callba
 
     } else if (buttonLevel == HIGH) {
       button->state = 2; // step to state 2
-
+      button->startTime = now;
     } else if ((buttonLevel == LOW) && (now > button->startTime + buttonPressTicks)) {
       //_isLongPressed = true;  // Keep track of long press state      
     if (longPressStartFunc) longPressStartFunc();
@@ -44,7 +44,7 @@ void ButtonController::processing(struct Button *button,unsigned char pin,Callba
       if (clickFunc) clickFunc();
       button->state = 0; // restart.
 
-    } else if (buttonLevel == LOW) {
+    } else if ((buttonLevel) == LOW && (now > button->startTime + buttonDebounceTicks)) {
       button->state = 3; // step to state 3
     } 
 
@@ -53,7 +53,13 @@ void ButtonController::processing(struct Button *button,unsigned char pin,Callba
       // this was a 2 click sequence.
       if (doubleClickFunc) doubleClickFunc();
       button->state = 0; // restart.
-    } 
+    } else if ((buttonLevel == LOW) && (now > button->startTime + buttonPressTicks)){
+	 //_isLongPressed = true;  // Keep track of long press state      
+    if (longPressStartFunc) longPressStartFunc();
+    if (duringLongPressFunc) duringLongPressFunc();
+      button->state = 6; // step to state 6
+      
+	}
 
   } else if (button->state == 6) { // waiting for menu pin being release after long press.
     if (buttonLevel == HIGH) {
