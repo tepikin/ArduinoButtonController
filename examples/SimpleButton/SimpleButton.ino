@@ -22,7 +22,7 @@ void setup() {
 // main code here, to run repeatedly: 
 void loop() {
   // keep watching the push buttons:
-  ButtonController::processing(button,A1,clickFunction,NULL,NULL,NULL,NULL);  
+  ButtonController::processing(&button,A1,clickFunction,NULL,NULL,NULL,NULL);  
   // May use ather functions. For example:
   // ButtonController::processing(button1,A1,click1,doubleclick1,longPressStart1,longPressStop1,longPress1);
    

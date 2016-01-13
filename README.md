@@ -38,13 +38,13 @@ void setup() {
 } 
 
 void loop() {
-  ButtonController::processing(button1,A1,click,doubleClick,longPressStart,longPressStop,longPress);  
+  ButtonController::processing(&button1,A1,click,doubleClick,longPressStart,longPressStop,longPress);  
                                              // A1 - id of PIN where button1 connected
                                              // "click" - name of function for click event
                                              // "doubleClick" - name of function for doubleClick event 
                                              // and so on ...
   
-  ButtonController::processing(button2,A2,clickFunction2,NULL,NULL,NULL,NULL);   
+  ButtonController::processing(&button2,A2,clickFunction2,NULL,NULL,NULL,NULL);   
                                              // A2 - id of PIN where button2 connected
                                              // clickFunction2 - name of function for click event for button2
                                              // You may write NULL for unused functions
