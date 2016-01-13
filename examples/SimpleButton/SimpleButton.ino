@@ -28,7 +28,7 @@ void loop() {
    
   
   // You can implement other code in here or just wait a while 
-  delay(10);
+  // delay(10);
 } 
 
 
