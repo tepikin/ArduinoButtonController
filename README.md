@@ -1,4 +1,4 @@
-Arduino ButtonController Library
+Arduino ButtonController Library <a href="https://flattr.com/submit/auto?fid=9zwvgy&url=https%3A%2F%2Fgithub.com%2Ftepikin%2FArduinoButtonController" target="_blank"><img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" /></a>
 ===
 
 This Arduino libary is improving the usage of a singe button for input.
